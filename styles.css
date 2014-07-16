@@ -1,0 +1,498 @@
+@font-face {
+	font-family: 'Bodoni';
+	src: url('BodoniXT.tt');
+	src: local('?'), url('BodoniXT.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html, body
+{
+height:100%;
+margin:0;
+overflow:hidden;
+}
+
+a
+{
+color:inherit;
+}
+
+a:hover
+{
+color:#222;
+}
+
+
+/* regular section */
+
+
+.intro
+{
+width:100%;
+height:100%;
+}
+
+.introBox
+{
+width:50%;
+margin: auto;
+background-color:white;
+box-shadow: inset 0 -3px 10px rgba(0,0,0,.3);
+border:1px solid lightgray;
+padding:25px;
+border-radius:10px;
+overflow:hidden;
+position:relative;
+font-family:Georgia, Times New Roman, serif;
+line-height:1.5em;
+}
+
+	.introBox h1
+	{
+	text-align:center;
+	font-family:Bodoni, Times New Roman, serif;
+	font-weight:normal;
+	font-size:60pt;
+	line-height:1.1em;
+	margin:0;
+
+	}
+
+	.introBox img
+	{
+	margin:10px auto;
+	display:block;
+	}
+	
+	.introBox .byline
+	{
+	text-transform:uppercase;
+	font-size:10pt;
+	color:gray;
+	text-align:center;
+	margin:15px 0px 0px;
+	}
+	
+	.introBox .text
+	{
+		width:80%;
+		margin:0px auto 20px;	
+		font-size:13pt;
+		text-align:center;
+	}
+	
+	.introBox .button
+	{
+	width:120px;
+	height:120px;
+	background-color:seagreen;
+	color:white;
+	border-radius:150px;
+	margin:10px auto;
+	font-style:italic;
+	text-align:center;
+	line-height:120px;
+	cursor:pointer;
+	opacity:.8;
+	padding:0;
+	border:0;
+	display:block;
+	}
+		
+		.introBox .button:hover
+		{
+		opacity:1;
+		}
+	
+.nav
+{
+width:350px;
+margin-left:10px;
+padding-left:10px;
+height:100%;
+float:left;
+position:relative;
+border-left:1px solid lightgray;
+}
+
+	.nav .logo 
+	{
+	margin:10px auto;
+	display:none;
+	text-align:center;
+	}
+
+.storyBox
+{
+position:absolute;
+width:90%;
+top:0%;
+left:5%;
+border-bottom:1px solid lightgray;
+padding:1% 0;
+margin-bottom:1%;
+}
+
+.chapters
+{
+margin:auto;
+text-align:center;
+width:100%;
+}
+	
+	.chapter
+	{
+	width:15px;
+	height:15px;
+	border-radius:20px;
+	background-color:lightgray;
+	box-shadow: inset 1px 1px 1px 2px rgba(0,0,0,0.05);
+	display:inline-block;
+	margin-right:10px;
+	cursor:pointer;
+	}
+		.chapter:hover, .chapter.active
+		{
+		box-shadow: inset -1px -1px 1px 2px rgba(0,0,0,0.1);
+		}
+
+ul.storyline
+{
+padding:0;
+}
+
+	ul.storyline li
+	{
+	list-style-type:none;
+	font-family:"Roboto", Helvetica, sans-serif;
+	opacity:.3;
+	display:block;
+	cursor:pointer;
+	margin-bottom:10px;
+	}
+		ul.storyline li.active
+		{
+		opacity:1
+		}
+		
+		ul.storyline li.hidden
+		{
+		display:none;
+		}
+		
+		ul.storyline li:hover
+		{
+		opacity:1;
+		}
+		
+		
+		ul.storyline li .chapterNumber
+		{
+		float:left;
+		width:35px;
+		height:35px;
+		line-height:35px;
+		font-weight:bold;
+		color:rgba(255,255,255,.9);
+		text-align:center;
+		background-color:seagreen;
+		border-radius:20px;
+		margin-right:10px;
+		}
+		
+		ul.storyline li .chapterStory
+		{
+		
+		}
+			ul.storyline li .chapterStory h3
+			{
+			margin:0;
+			
+			}
+			
+			ul.storyline li .chapterStory img
+			{
+			width:100%;
+			margin:10px 0;
+			display:none;
+			}
+			
+			ul.storyline li .chapterStory p
+			{
+			margin-top:0;
+			}
+				
+				ul.storyline li .chapterStory p.legend
+				{
+				margin-bottom:10px
+				}
+				
+					ul.storyline li .chapterStory p.legend span
+					{
+					width:32%;
+					margin-left:1%;
+					float:left;
+					display:inline-block;
+					}
+					
+					ul.storyline li .chapterStory p.legend svg
+					{
+					position:relative;
+					top:3px;
+					}
+				
+			
+			ul.storyline li:not(.active) .chapterStory p
+			{
+			display:none;
+			}
+		
+		
+	
+.wellInfoBox
+{
+	background-color:white;
+	height:50%;
+	margin-top:1%;
+	padding:2% 2%;
+	position:absolute;
+	bottom:-100%;
+	box-shadow: inset 0 1px 5px rgba(0,0,0,.3);
+	width:87%;
+	border-radius:10px 10px 0px 0px;
+	padding:10px;
+	font-family:"Roboto", Helvetica, Arial, sans-serif;
+}
+	
+	.wellInfoBox #close
+	{
+	position:absolute;
+	right:0;
+	top:0;
+	padding:10px;
+	cursor:pointer;
+	}
+	
+	.wellInfoBox .colorDot
+	{
+	width:10px;
+	height:10px;
+	border-radius:10px;
+	margin-right:5px;
+	display:inline-block;
+	border:1px solid black;
+	opacity:.5;
+	}
+	
+	.wellInfoBox h2
+	{
+	font-size:16pt;
+	margin:0px;
+	}
+	
+	.wellInfoBox h3
+	{
+	font-size:12pt;
+	margin:0 0 10px;
+	text-transform:uppercase;
+	font-weight:normal;
+	}
+	
+	.wellInfoBox ul
+	{
+	padding:0;
+	}
+	
+		.wellInfoBox li
+		{
+		list-style-type:none;
+		margin-bottom:5px;
+		}
+
+#canvas
+{
+height:100%;
+float:left;
+}
+
+.header
+{
+position:fixed;
+top:0;
+width:100%;
+height:30px;
+box-shadow:1px 0px 5px gray;
+padding:10px;
+background-color:white;
+z-index:3;
+}
+
+	.header .logo
+	{
+	width:50px;
+	height:100%;
+	background:  url("../img/PG.png") no-repeat center;
+	background-size:contain;
+	border-right:1px solid lightgray;
+	padding-right:10px;
+	margin-right:10px;
+	float:left;
+	}
+	
+	.header h1
+	{
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:14pt;
+	display:inline-block;
+	line-height:30px;
+	float:left;
+	margin:0;
+	}
+	
+	.header .social
+	{
+	float:right;
+	height:30px;
+	line-height:30px;
+	width:100px;
+	}
+	
+		.header .social a i
+		{
+		float:left;
+		color:black;
+		line-height:30px;
+		margin-right:20px;
+		}
+			.header .social a i:hover
+			{
+			color:#666;
+			cursor:pointer;
+			}
+			.header .social a:last-of-type
+			{
+			margin-right:0px;
+			}
+
+
+			
+
+/* SVG STUFF */
+			
+.well circle
+{
+//fill:red;
+stroke:black;
+stroke-width:1px;
+fill-opacity:.5
+}
+	.well circle:hover
+	{
+	cursor:pointer;
+	fill-opacity:.8
+	}
+
+.company circle
+{
+stroke:white;
+stroke-width:15px;
+stroke-opacity:.5;
+fill-opacity:.2
+}
+
+.company .companyLabel
+{
+font-family:arial;
+font-size:8pt;
+text-align:center;
+vertical-align:middle;
+}
+
+.county
+{
+fill:#eee;
+stroke:#aaa;
+}
+
+.axis
+{
+
+font-family: Helvetica, Arial, sans-serif;
+font-size: 10px;
+}
+
+.axis path, .axis line {
+fill: none;
+stroke: #000;
+shape-rendering: crispEdges;
+}
+
+.timelineLine
+{
+stroke:#aaa;	
+stroke-width:2px;
+stroke-opacity:.5;
+}
+
+.referenceLine
+{
+stroke:black;
+}
+
+.referenceLineText
+{
+font-family:Helvetica, Arial, sans-serif;
+font-size:9pt;
+font-style:italic;
+
+}
+
+
+.hexagon
+{
+stroke:black;
+stroke-width:1px;
+}
+
+@media all and (max-width:1400px) {
+	.introBox h1 { font-size:40pt; }
+}
+
+@media all and (max-width: 1000px) {
+
+.header h1 { display:none; }
+
+.header .logo { border:none; }
+
+.introBox { width:65%; }
+
+}
+
+@media all and (max-width:800px) {
+
+#canvas { display:none }
+
+.nav { width:100%; margin:auto }
+
+ul.storyline li:not(.active) .chapterStory p { display:block; }
+
+ul.storyline li { opacity:1; margin-bottom:50px; }
+
+.intro { display:none; }
+
+ul.storyline li.hidden { display:block; }
+
+ul.storyline li .chapterStory img { display:block; }
+
+body { overflow-y:scroll; }
+
+.wellInfoBox{ display:none }
+
+.nav .logo { display:block }
+
+.storyBox { position:static; }
+
+ul.storyline { margin-top:0 }
+
+}

@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+
+<head>
+<title>Pittsburgh Post-Gazette: Plugged Wells</title>
+
+<!-- GOOGLE ANALYTICS -->
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-15716261-1']);
+_gaq.push(['_setDomainName', 'post-gazette.com']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+<!-- end Google Analytics -->
+
+<meta name="viewport" content="initial-scale=1">
+
+<meta property="og:type"            content="article" /> 
+<meta property="og:url"             content="http://newsinteractive.post-gazette.com/plugged-wells" /> 
+<meta property="og:title"           content="Pittsburgh Post-Gazette: The mystery of the missing wells" /> 
+<meta property="og:description"     content="Amid Pennsylvania's shale boom, energy companies have plugged more than 400 gas wells. Why?" /> 
+<meta property="og:image"           content="" /> 
+
+<meta name="twitter:card" 			content="summary">
+<meta name="twitter:site" 			content="@pittsburghpg">
+<meta name="twitter:creator"		content="@andrewmcgill">
+<meta name="twitter:title"			content="Pittsburgh Post-Gazette: The mystery of the missing wells">
+<meta name="twitter:description"	content="Amid Pennsylvania's shale boom, energy companies have plugged more than 400 gas wells. Why?">
+<meta name="twitter:image" 			content="">
+	
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="http://d3js.org/d3.hexbin.v0.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="data-stuff.js" charset="utf-8"></script>
+<script src="dom-stuff.js" charset="utf-8"></script>
+<script src="scripts.js" charset="utf-8"></script>
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,900,300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="styles.css" />
+
+<!--[if lte IE 6]>
+	<style style="text/css"> #canvas { display:none } .nav { width:100%; margin:auto } ul.storyline li:not(.active) .chapterStory p { display:block; } ul.storyline li { opacity:1; margin-bottom:50px; } .intro { display:none; } ul.storyline li.hidden { display:block; } ul.storyline li .chapterStory img { display:block; } body { overflow-y:scroll; } .wellInfoBox{ display:none } .nav .logo { display:block } .storyBox { position:static; } ul.storyline { margin-top:0 }</style>
+<![endif]-->
+
+</head>
+
+<body>
+
+<div class="intro">
+	<div class="introBox">
+		<a href="http://powersource.post-gazette.com"><img src="http://powersourcedev.post-gazette.com/libercus/default/images/powersourcelogo_long.png" /></a>
+		<h1>The Mystery of the Plugged Wells</h1>
+		<div class="byline">By <a href="http://twitter.com/andrewmcgill">Andrew McGill</a> and <a href="http://twitter.com/PG_AnyaLitvak">Anya Litvak</a></div>
+		<div class="text">
+			<p>Amid Pennsylvania's shale boom, energy companies have plugged more than 400 gas wells.</p>
+			<p>Why?</p>
+		</div>
+		<button class="button" id="go">Let's find out</button>
+	</div>
+</div>
+
+<svg id="canvas" shape-rendering="geometricPrecision" width="500">
+	<g id="map"></g>
+</svg>
+
+<div class = "nav">
+	<a class="logo" href="http://powersource.post-gazette.com"><img src="http://powersourcedev.post-gazette.com/libercus/default/images/powersourcelogo_long.png" /></a>
+	<div style="clear:both"></div>
+	<div class = "storyBox">
+	
+		
+		<ul class="storyline">
+			<li class="active" id="step1">
+				<div class="chapterNumber">1</div>
+				<div class="chapterStory">
+					<h3>Wells fan out across the Marcellus</h3>
+					<p>Since 2006, Pennsylvania gas drillers have broken ground on more than 7,000 wells. Many became fully functioning gas wells.</p>
+					<p class="legend">
+						<span>
+							<svg width="20" height="20"><path class="hexagon" d="m0,-10l8.660254037844386,4.999999999999999l1.7763568394002505e-15,10l-8.660254037844382,5.000000000000002l-8.660254037844389,-4.999999999999996l-7.105427357601002e-15,-9.999999999999996l8.66025403784438,-5.000000000000007z" transform="translate(10,10)" opacity="1" style="fill: #e9f4f6;"></path></svg>
+							1 well
+						</span>
+						<span>
+							<svg width="20" height="20"><path class="hexagon" d="m0,-10l8.660254037844386,4.999999999999999l1.7763568394002505e-15,10l-8.660254037844382,5.000000000000002l-8.660254037844389,-4.999999999999996l-7.105427357601002e-15,-9.999999999999996l8.66025403784438,-5.000000000000007z" transform="translate(10,10)" opacity="1" style="fill: #579eb2;"></path></svg>
+							50
+						</span>
+						<span>
+							<svg width="20" height="20"><path class="hexagon" d="m0,-10l8.660254037844386,4.999999999999999l1.7763568394002505e-15,10l-8.660254037844382,5.000000000000002l-8.660254037844389,-4.999999999999996l-7.105427357601002e-15,-9.999999999999996l8.66025403784438,-5.000000000000007z" transform="translate(10,10)" opacity="1" style="fill: #002e55;"></path></svg>
+							100
+						</span>
+						<div style="clear:both"></div>
+					</p>
+					<img src="img/hexmap.jpg" />
+					
+				</div>
+				<div style="clear:both"></div>
+			</li>
+			<li id="step2">
+				<div class="chapterNumber">2</div>
+				<div class="chapterStory">
+					<h3 text="Except for those that didn't">Next</h3>
+					<p>Around 400 met an early death. These wells were <strong>plugged</strong>, filled with concrete after having been partially or completely drilled by energy companies.</p>
+					<img src="img/pluggedmap-black.jpg" />
+				</div>
+				<div style="clear:both"></div>
+			</li>
+			<li class="hidden" id="step3">
+				<div class="chapterNumber">3</div>
+				<div class="chapterStory">
+					<h3 text="Some plug more than others">Next</h3>
+					<p><strong>Talisman Energy</strong> and <strong>Anadarko</strong> have abandoned the most wells, followed by <strong>Range Resources</strong>.</p>
+					<img src="img/companies.jpg" />
+				</div>
+				<div style="clear:both"></div>
+			</li>
+			<li class="hidden" id="step4">
+				<div class="chapterNumber">4</div>
+				<div class="chapterStory">
+					<h3 text="Birth, death...">Next</h3>
+					<p>Many of the doomed wells were spudded between 2010 and 2012, as natural gas prices took a deep dive. The majority weren't fully drilled or completed.</p>
+					<img src="img/timemap.jpg" />
+				</div>
+				<div style="clear:both"></div>
+			</li>
+			<li class="hidden" id="step5">
+				<div class="chapterNumber">5</div>
+				<div class="chapterStory">
+					<h3 text="...and taxes.">Next</h3>
+					<p>In February 2012, Pennsylvania passed <strong>Act 13</strong>, which imposed fees on all active wells &mdash; even those that weren't producing. As these new expenses cut into declining sales revenue, some energy companies decided to cut their losses and plug.
+					<img src="img/timemap-with-payments.jpg" />
+				</div>
+				<div style="clear:both"></div>
+			</li>
+			
+			<li class="hidden" id="step6">
+				<div class="chapterNumber">6</div>
+				<div class="chapterStory">
+					<h3 text="What's gained?">Next</h3>
+					<p>Both Talisman and Anadarko have aggressively shut down wells in advance of Act 13 deadlines, saving a hefty balance in fees.</p>
+					<img src="img/timemap-singled-out.jpg" />
+				</div>
+				<div style="clear:both"></div>
+			</li>
+			
+			<li class="hidden" id="step7">
+				<div class="chapterNumber">7</div>
+				<div class="chapterStory">
+					<h3 text="What's lost?">Next</h3>
+					<p>Plugged wells are permanent. Once abandoned, companies won't be returning to redrill them, leaving potential revenue for landowners, local businesses and municipalities buried under ground.</p><p>Central Pennsylvania counties, which are on the periphery of the Marcellus, saw a disproportionate number of their wells abandoned.</p>				
+					<img src="img/plugged-map-color.jpg" />
+				</div>
+				<div style="clear:both"></div>
+				
+			</li>
+			
+		</ul>
+		
+	</div>
+	
+	
+	<div class="wellInfoBox">
+		<div id="close"><i class="fa fa-times-circle"></i></div>
+		<h2>fdfd</h2>
+		<h3></h3>
+		<ul>
+			<li id="farm"><i class="fa fa-home"></i> <strong>Farm: </strong><span></span></li>
+			<li id="town"><i class="fa fa-building-o"></i> <strong>Town: </strong><span></span></li>
+			<li id="county"><i class="fa fa-flag-o"></i> <strong>County: </strong><span></span></li>
+			<li></li>
+			
+		</ul>
+	</div>
+	
+</div>
+
+
+</body>
+
+</html>
